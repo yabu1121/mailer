@@ -25,14 +25,22 @@ const TopPage = () => {
     }).then((res) => {
       if (res.status === 200) {
         console.log("メール送信成功");
-        nameRef.current.value = '';        
-        emailRef.current.value = '';
-        messageRef.current.value = '';
-    }
+        
+        if (nameRef.current) {
+          nameRef.current.value = '';
+        }
+        if (emailRef.current) {
+          emailRef.current.value = '';
+        }
+        if (messageRef.current) {
+          messageRef.current.value = '';
+        }
+      }
     })
   }
 
   return (
+    // JSXの部分は変更なし
     <>
       <div className='container mt-5'>
         <h2 className='mb-3'>問い合わせフォーム(Node Mailer)</h2>
