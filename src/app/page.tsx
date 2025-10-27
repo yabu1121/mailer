@@ -25,6 +25,7 @@ const TopPage = () => {
     }).then((res) => {
       if (res.status === 200) {
         console.log("メール送信成功");
+        alert("メールを送信しました。返信をお待ちください");
         
         if (nameRef.current) {
           nameRef.current.value = '';
